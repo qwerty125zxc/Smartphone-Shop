@@ -1,0 +1,62 @@
+<div style="margin-top: 40px"/>
+<%= form_for @phone, url: {action: "create"} do |f| %>
+Brand:
+<%= f.text_field :brand %><br>
+Model:
+<%= f.text_field :model %><br>
+Price:
+<%= f.number_field :price %><br>
+Materials:
+<%= f.text_field :materials %><br>
+Color:
+<%= f.text_field :color %><br>
+OS:
+<%= f.text_field :os %><br>
+Display diagonal (inches):
+<%= f.text_field :displaysize %><br>
+Display type:
+<%= f.text_field :displaytype %><br>
+Display resolution:
+<%= f.text_field :displayresolution %><br>
+System on a Chip:
+<%= f.text_field :soc %><br>
+Frequency:
+<%= f.text_field :frequency %><br>
+GPU:
+<%= f.text_field :gpu %><br>
+ROM storage:
+<%= f.number_field :rom %><br>
+RAM storage:
+<%= f.number_field :ram %><br>
+Number of SIM cards:
+<%= f.number_field :sims %><br>
+Main camera:
+<%= f.text_field :maincam %><br>
+Front camera:
+<%= f.text_field :frontcam %><br>
+Video resolution:
+<%= f.text_field :videoresolution %><br>
+Camera focus type:
+<%= f.text_field :focus %><br>
+More about cam:
+<%= f.text_area :moreaboutcam, size: "60x12" %><br>
+Battery size (mAh):
+<%= f.number_field :battery %><br>
+Fast charge:
+<%= f.text_field :fastcharge %><br>
+Wireless interfaces:
+<%= f.text_area :wireless, size: "60x12" %><br>
+Wire interfaces:
+<%= f.text_field :fastcharge %><br>
+Year:
+<%= f.number_field :year %><br>
+Dimensions:
+<%= f.text_field :dimensions %><br>
+Mass:
+<%= f.number_field :mass %><br>
+More:
+<%= f.text_area :more, size: "60x12" %><br>
+Description:
+<%= f.text_area :description, size: "60x12" %><br>
+<%= f.submit "Add" %>
+<% end %>

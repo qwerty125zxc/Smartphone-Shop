@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin_id: 1
+  brand: MyString
+  model: MyString
+  price: 1
+  materials: MyString
+  color: MyString
+  os: MyString
+  displaysize: 1.5
+  displaytype: MyString
+  displayresolution: MyString
+  soc: MyString
+  frequency: MyString
+  gpu: MyString
+  rom: 1
+  ram: 1
+  sims: 1
+  maincam: MyString
+  frontcam: MyString
+  videoresolution: MyString
+  focus: MyString
+  moreaboutcam: MyText
+  battery: 1
+  fastcharge: MyString
+  wireless: MyText
+  year: 1
+  interfaces: MyString
+  dimensions: MyString
+  mass: 1
+  more: MyText
+  description: MyText
+
+two:
+  admin_id: 1
+  brand: MyString
+  model: MyString
+  price: 1
+  materials: MyString
+  color: MyString
+  os: MyString
+  displaysize: 1.5
+  displaytype: MyString
+  displayresolution: MyString
+  soc: MyString
+  frequency: MyString
+  gpu: MyString
+  rom: 1
+  ram: 1
+  sims: 1
+  maincam: MyString
+  frontcam: MyString
+  videoresolution: MyString
+  focus: MyString
+  moreaboutcam: MyText
+  battery: 1
+  fastcharge: MyString
+  wireless: MyText
+  year: 1
+  interfaces: MyString
+  dimensions: MyString
+  mass: 1
+  more: MyText
+  description: MyText

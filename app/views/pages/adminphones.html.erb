@@ -1,0 +1,9 @@
+<h2 style="margin-top: 40px">Smartphones</h2>
+<p><%= link_to "Add phone", new_phone_path %><br>
+<% if @phones == [] %>
+    <p>No phones</p>
+<% else %>
+    <% @phones.each do |phone| %>
+       <p><b><%= phone.brand %></b> <%= phone.model %> | <i><%= phone.price %> UAN</i> <%= link_to "Show", phone_path(phone.id) %> <%= link_to "Edit", edit_phone_path(phone.id) %> <%= link_to "Delete", phone_path(phone.id), method: :delete %><br>
+    <% end %>
+<% end %>
