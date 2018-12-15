@@ -1,0 +1,16 @@
+<div style="margin-top: 40px"/>
+<h2>Order for <%= @phone.brand %> <%= @phone.model %></h2>
+<%= form_for @order, url: phone_ordernoregs_path(@phone.id) do |f| %>
+Your phone number:
+<%= f.number_field :mobnumber %><br>
+Email:
+<%= f.text_field :email %><br>
+Your adress:
+<%= f.text_field :adress %><br>
+Count:
+<%= f.number_field :count %><br>
+
+[Details about delivery...]
+
+<%= f.submit "Order" %>
+<% end %>
