@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/admin-page', to: 'pages#admin'
   get '/admin-phone-list', to: 'pages#adminphones'
 
-  resources :phones
-  resources :brands
+  resources :phones do
+    resources :ordernoregs
+  end
 end

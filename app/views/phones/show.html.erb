@@ -2,4 +2,4 @@
 <%= @phone.brand %> <%= @phone.model %>
 <p><small>Description:</small></p>
 <%= @phone.description %>
-<% if !admin_signed_in? %><p><%= link_to "Buy" %></p><%end%>
+<% if !admin_signed_in? %><p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p><%end%>
