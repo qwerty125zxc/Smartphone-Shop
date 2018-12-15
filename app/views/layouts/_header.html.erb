@@ -1,0 +1,20 @@
+<div style="top: 0px; left: 0px; width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 4px;
+    background-color: white;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    vertical-align: middle;
+    box-shadow: 4px 2px 7px 3px rgba(0, 0, 0, 0.44);">
+    <% if admin_signed_in? %>
+        <strong><%= current_admin.email %>(admin)</strong> <%= link_to "Profile", edit_admin_registration_path %> <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+        <%= link_to "View phones", admin_phone_list_path %>
+    <% end %>
+    <% if user_signed_in? %>
+        <strong><%= current_user.email %></strong> <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to "Sign in or sign up", new_user_session_path %>
+    <% end %>
+</div>
