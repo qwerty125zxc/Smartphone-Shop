@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @phones = Phone.all
   end
 
+  def admin
+    sign_out :user
+  end
+
 end

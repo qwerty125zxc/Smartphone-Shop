@@ -2,3 +2,4 @@
 <%= @phone.brand %> <%= @phone.model %>
 <p><small>Description:</small></p>
 <%= @phone.description %>
+<% if !admin_signed_in? %><p><%= link_to "Buy" %></p><%end%>
