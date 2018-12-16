@@ -17,11 +17,6 @@ class OrdernoregsController < ApplicationController
       end
     end
 
-    def destroy
-      @order.destroy
-      redirect_to root_path
-    end
-
   private
 
     def order_params

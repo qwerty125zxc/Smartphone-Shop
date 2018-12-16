@@ -1,5 +1,17 @@
 <div style="margin-top: 40px"/>
-<%= @phone.brand %> <%= @phone.model %>
-<p><small>Description:</small></p>
+<h2><%= @phone.brand %> <%= @phone.model %></h2>
+<p><h3>Description:</h3></p>
 <%= @phone.description %>
-<% if !admin_signed_in? %><p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p><%end%>
+<p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p>
+<h3>Comments</h3><hr>
+<%= link_to "Add comment", new_phone_comment_path(@phone.id) %><br>
+
+<% @comments.each do |c| %>
+    <p><b><%= c.user.email %></b></p>
+    <p><%= c.body %></p>
+    <% if c.user.id == current_user.id %>
+      <%= link_to "Edit", edit_phone_comment_path(c.id) %>
+      <%= link_to "Delete", phone_comment_path(c.id), method: :delete %>
+    <%end%>
+    <hr>
+  <%end%>

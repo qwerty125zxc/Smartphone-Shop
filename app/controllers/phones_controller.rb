@@ -13,6 +13,7 @@ class PhonesController < ApplicationController
 
   def show
     @phone = Phone.find(params[:id])
+    @comments = @phone.comments
   end
 
   def edit
