@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :find_phone
     before_action :authenticate_user!
+    before_action :check
 
     def new
       @b = false
@@ -35,6 +36,7 @@ class CommentsController < ApplicationController
 
     def update
       @comment = Comment.find_by(id: params[:id])
+      params[:comment][:phone_id] = @phone.id
       if @comment.update(comment_params)
         flash[:notice] = "Comment successfully updated"
         redirect_to phone_path(@phone.id)
@@ -46,6 +48,7 @@ class CommentsController < ApplicationController
     end
 
     def destroy
+      @comment = Comment.find_by(id: params[:id])
       @comment.destroy
       redirect_to phone_path(@phone.id)
     end
@@ -58,5 +61,11 @@ class CommentsController < ApplicationController
 
     def find_phone
       @phone = Phone.find_by(id: params[:phone_id])
+    end
+
+    def check
+      if user_signed_in?
+        sign_out :admin
+      end
     end
 end

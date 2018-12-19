@@ -1,6 +1,6 @@
 <div style="margin-top: 40px"/>
 <h2>Update comment for <%= @phone.brand %> <%= @phone.model %></h2>
-<%= form_for @comment, @phone, url: phone_comments_path(@phone.id) do |f| %>
+<%= form_for @comment, url: phone_comment_path(@comment.id) do |f| %>
 Enter your text here:<br>
 <%= f.text_area :body, size: "60x12" %><br />
 <%= f.submit "Save" %>
