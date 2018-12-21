@@ -1,5 +1,6 @@
 <h1>Smartphone Shop</h1>
 <p><% @phones.each do |phone| %>
+        <%= image_tag phone.photo.url(:medium) %><br>
        <%= link_to phone_path(phone.id) do %><p><b><%= phone.brand %></b> <%= phone.model %><%end%> | <i><%= phone.price %> UAN</i>
     <% end %>
 </p>

@@ -1,4 +1,5 @@
 class OrdernoregsController < ApplicationController
+  before_action :check
 
     def new
       @phone = Phone.find_by(id: params[:phone_id])
@@ -17,14 +18,15 @@ class OrdernoregsController < ApplicationController
       end
     end
 
-    def destroy
-      @order.destroy
-      redirect_to root_path
-    end
-
   private
 
     def order_params
       params.require(:ordernoreg).permit(:phone_id, :count, :mobnumber, :email, :adress)
+    end
+
+    def check
+      if user_signed_in?
+        sign_out :admin
+      end
     end
 end

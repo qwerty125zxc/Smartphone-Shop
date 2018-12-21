@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :phones do
     resources :ordernoregs
+    resources :comments
   end
+  resources :userparams
 end

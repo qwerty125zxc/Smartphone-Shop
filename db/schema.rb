@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181215100537) do
+ActiveRecord::Schema.define(version: 20181221075804) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20181215100537) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "brands", force: :cascade do |t|
-    t.string "name"
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "phone_id"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 20181215100537) do
     t.string "adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -71,6 +74,18 @@ ActiveRecord::Schema.define(version: 20181215100537) do
     t.integer "mass"
     t.text "more"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "userparams", force: :cascade do |t|
+    t.string "name"
+    t.integer "mobnumber"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
