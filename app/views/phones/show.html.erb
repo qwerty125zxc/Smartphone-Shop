@@ -1,12 +1,12 @@
 <div style="margin-top: 40px"/>
 <h2><%= @phone.brand %> <%= @phone.model %></h2>
+<%= image_tag @phone.photo.url(:medium) %><br>
 <p><h3>Description:</h3></p>
 <%= @phone.description %>
 <% if !admin_signed_in? %>
-    <p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p>
+    <p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p><%end%>
 <h3>Comments</h3><hr>
 <%= link_to "Add comment", new_phone_comment_path(@phone.id) %><br>
-<%end%>
 
 <% @comments.each do |c| %>
     <p><b><%= c.user.userparam.name %></b></p>

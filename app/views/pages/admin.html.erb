@@ -1,6 +1,9 @@
-<h2 style="margin-top: 40px">Adminka</h2>
+<h2 style="margin-top: 40px">Current orders</h2>
 
 
 <p>
-  some statistics about workers
+  <% @orders.each do |order| %>
+    <%= order.phone.brand %> <%= order.phone.model %> <%= order.count %> <%= order.email %> <%= order.mobnumber %> <%= order.adress %><br>
+    <hr>
+  <% end %>
 </p>

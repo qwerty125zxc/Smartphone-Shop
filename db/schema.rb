@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181220174131) do
+ActiveRecord::Schema.define(version: 20181221075804) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,14 +32,6 @@ ActiveRecord::Schema.define(version: 20181220174131) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
-    t.integer "count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "phone_id"
-    t.integer "order_id"
-  end
-
   create_table "ordernoregs", force: :cascade do |t|
     t.integer "phone_id"
     t.integer "count"
@@ -49,16 +41,6 @@ ActiveRecord::Schema.define(version: 20181220174131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "adress"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "mobnumber"
-    t.string "status"
-    t.boolean "apply"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -94,6 +76,10 @@ ActiveRecord::Schema.define(version: 20181220174131) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "userparams", force: :cascade do |t|

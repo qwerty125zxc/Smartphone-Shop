@@ -30,12 +30,6 @@ class UserparamsController < ApplicationController
 
     end
 
-    def destroy
-      @userparam = Userparam.find_by(user_id: current_user.id)
-      @userparam.destroy
-      redirect_to root_path
-    end
-
   private
 
     def userparam_params

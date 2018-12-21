@@ -17,6 +17,7 @@ class PagesController < ApplicationController
 
   def admin
     sign_out :user
+    @orders = Ordernoreg.all
   end
 
 end
