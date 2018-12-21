@@ -2,7 +2,8 @@
 <h2><%= @phone.brand %> <%= @phone.model %></h2>
 <p><h3>Description:</h3></p>
 <%= @phone.description %>
-<% if !admin_signed_in? %><p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p>
+<% if !admin_signed_in? %>
+    <p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p>
 <h3>Comments</h3><hr>
 <%= link_to "Add comment", new_phone_comment_path(@phone.id) %><br>
 <%end%>

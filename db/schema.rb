@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181219220606) do
+ActiveRecord::Schema.define(version: 20181220174131) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,18 +24,20 @@ ActiveRecord::Schema.define(version: 20181219220606) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "carts", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "phone_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "phone_id"
+    t.integer "order_id"
   end
 
   create_table "ordernoregs", force: :cascade do |t|
@@ -46,15 +48,17 @@ ActiveRecord::Schema.define(version: 20181219220606) do
     t.string "adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "phone_id"
-    t.integer "count"
     t.string "adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "mobnumber"
+    t.string "status"
+    t.boolean "apply"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -88,6 +92,14 @@ ActiveRecord::Schema.define(version: 20181219220606) do
     t.integer "mass"
     t.text "more"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "userparams", force: :cascade do |t|
+    t.string "name"
+    t.integer "mobnumber"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
