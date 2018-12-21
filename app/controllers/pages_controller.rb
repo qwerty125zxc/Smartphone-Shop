@@ -5,6 +5,10 @@ class PagesController < ApplicationController
     if user_signed_in?
       sign_out :admin
     end
+
+    if user_signed_in? && current_user.userparam.nil?
+      redirect_to new_userparam_path
+    end
   end
 
   def adminphones

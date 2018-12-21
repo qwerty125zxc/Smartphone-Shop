@@ -1,5 +1,18 @@
 <div style="margin-top: 40px"/>
 <%= form_for @phone, url: phone_path do |f| %>
+
+<% if @phone.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@phone.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @phone.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 Brand:
 <%= f.text_field :brand %><br>
 Model:
@@ -47,7 +60,7 @@ Fast charge:
 Wireless interfaces:
 <%= f.text_area :wireless, size: "60x12" %><br>
 Wire interfaces:
-<%= f.text_field :fastcharge %><br>
+<%= f.text_field :interfaces %><br>
 Year:
 <%= f.number_field :year %><br>
 Dimensions:

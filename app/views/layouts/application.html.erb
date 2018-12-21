@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SmartphoneShop</title>
+    <title>Smartphone Shop</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,11 @@
 
   <body>
     <%= render "layouts/header" %>
+
+    <% flash.each do |name, message| %>
+    <p><i><%= "#{name}: #{message}" %></i></p>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>
