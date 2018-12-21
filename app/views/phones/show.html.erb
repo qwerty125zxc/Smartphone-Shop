@@ -1,8 +1,60 @@
 <div style="margin-top: 40px"/>
 <h2><%= @phone.brand %> <%= @phone.model %></h2>
 <%= image_tag @phone.photo.url(:medium) %><br>
+<%= @phone.price %> UAN <br>
 <p><h3>Description:</h3></p>
 <%= @phone.description %>
+<p>Configuration:<p>
+Materials:
+<%= @phone.materials %><br>
+Color:
+<%= @phone.color %><br>
+OS:
+<%= @phone.os %><br>
+Display size:
+<%= @phone.displaysize %><br>
+Display type:
+<%= @phone.displaytype %><br>
+Display resolution:
+<%= @phone.displayresolution %><br>
+Proceccor:
+<%= @phone.soc %><br>
+Frequency:
+<%= @phone.frequency %><br>
+GPU:
+<%= @phone.gpu %><br>
+Memory capacity:
+<%= @phone.rom %> GB<br>
+RAM capacity:
+<%= @phone.ram %> GB <br>
+Number of SIM cards:
+<%= @phone.sims %><br>
+Main camera:
+<%= @phone.maincam %><br>
+Front camera:
+<%= @phone.frontcam %><br>
+Video resolution:
+<%= @phone.videoresolution %><br>
+Camera focus type:
+<%= @phone.focus %><br>
+More about camera:
+<%= @phone.moreaboutcam %><br>
+Battery capacity:
+<%= @phone.battery %> mAh<br>
+Fast charge:
+<%= @phone.fastcharge %><br>
+Wireless interfaces:
+<%= @phone.wireless %><br>
+Year:
+<%= @phone.year %><br>
+Wire interfaces:
+<%= @phone.interfaces %><br>
+Dimensions:
+<%= @phone.dimensions %><br>
+Mass:
+<%= @phone.mass %><br>
+More:
+<%= @phone.more %><br>
 <% if !admin_signed_in? %>
     <p><%= link_to "Buy", new_phone_ordernoreg_path(@phone.id) %></p><%end%>
 <h3>Comments</h3><hr>
